@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>register</title>
+
+<!-- Bootstrap -->
+<link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+<link href="/static/css/font-awesome.min.css" rel="stylesheet">
+<link href="/static/css/style.css" rel="stylesheet">
+<link href="/static/css/style-responsive.css" rel="stylesheet">
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="login-container">
+  <div class="middle-login" style="top:30%;">
+    <div class="block-web">
+      <div class="head">
+        <h3 class="text-center">register</h3>
+      </div>
+      <div style="background:#fff;">
+       
+       <form style="margin-bottom: 0px !important;" class="form-horizontal" method="post">
+           {% csrf_token %}
+          <div class="content">
+            <h4 class="title">register</h4>
+            
+            <fieldset>
+            <div class="form-group">
+              <div class="col-sm-12">
+                <div class="input-group"> <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                  <input type="text" placeholder="Username" id="username" name="username" class="form-control">
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <div class="col-sm-12">
+                <div class="input-group"> <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                  <input type="text" placeholder="Email Address" id="email address" name="email" class="form-control">
+                </div>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <div class="col-sm-12">
+                <div class="input-group"> <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                  <input type="password" placeholder="Password" id="password" name="password" class="form-control">
+                </div>
+              </div>
+            </div>
+
+        
+            </fieldset>
+          </div>
+          <div class="register-bottom">
+           <a href="{% url 'register' %}"> <button class="btn btn-primary" data-dismiss="modal" type="submit">register</button></a>
+           <a class="btn btn-primary back_login" style="float: right">Back to Login</a>
+          </div>
+        </form>
+       {% if error %}
+           <script>
+               alert('username is exist')
+               window.location.href='/accounts/register/';
+           </script>
+                    {% endif %}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="/static/js/jquery-2.0.2.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/js/accordion.js"></script>
+<script src="/static/js/common-script.js"></script>
+<script src="/static/js/jquery.nicescroll.js"></script>
+<script>
+    $('.back_login').click(function (){
+        window.location.href="/accounts/login/"
+    })
+</script>
+</body>
+</html>

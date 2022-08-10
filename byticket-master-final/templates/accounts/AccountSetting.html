@@ -1,0 +1,98 @@
+{% extends 'base/default.html' %}
+
+{% block content %}
+<div class="page-container">
+
+  <div id="main-content">
+    <div class="page-content">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Account Settings</h2>
+        </div><!--/col-md-12--> 
+      </div><!--/row-->
+      
+      <div class="row">
+        <div class="col-md-4">
+          <div class="block-web">
+            <div class="user-profile-sidebar">
+              <div class="row">
+                <div class="col-md-4"> <img alt="Avatar" class="img-circle" src="/static/images/img.png"> </div>
+                <div class="col-md-8">
+                  <div class="user-identity">
+                    <h4><strong>Albert Xu</strong></h4>
+                    <p><i class="fa fa-map-marker"></i> University of Liverpool</p>
+                  </div>
+                </div>
+              </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <ul>
+                            <hr>
+                            <lab>preferred:</lab>
+                            <span>{{ query.prefered }}</span>
+                            <hr>
+                            <lab>luggage:</lab>
+                            <span>{{ query.number_luggage }}KG</span>
+                            <hr>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          </div><!--/block-web-->
+        </div><!--/col-md-4-->
+        
+        <div class="col-md-8">
+          <div class="block-web full">
+            <ul class="nav nav-tabs nav-justified">
+              <li><a data-toggle="tab" href="#edit-profile"><i class="fa fa-pencil"></i> Personal Information</a></li>
+            </ul>
+
+              <div id="edit-profile" class="tab-pane animated fadeInRight">
+                <div class="user-profile-content">
+                  <form role="form" method="post">
+                    <div class="form-group">
+                      <label for="FullName">Full Name</label>
+                      <input type="text" value="{{ query.first_name }}" id="FullName" class="form-control" name="fullname">
+                    </div>
+                    <div class="form-group">
+                      <label for="Email">Email</label>
+                      <input type="email" value="{{ query.email }}" id="Email" class="form-control" name="email">
+                    </div>
+                    <div class="form-group">
+                      <label for="Username">Username</label>
+                      <input type="text" value="{{ query.username }}" id="Username" class="form-control" name="username" readonly="true">
+                    </div>
+                    <div class="form-group">
+                      <label for="Password">Password</label>
+                      <input type="password" placeholder="6 - 15 Characters" id="Password" class="form-control" name="password">
+                    </div>
+                     <div class="form-group">
+                        <label for="FullName">Seating Preference</label>
+                        <select class="form-control" name="project_id" id="asset_project" required>
+                            <option selected="selected" value="{{ query.prefered }}"></option>
+                            <option value="Preferred windows" id="project_id">Preferred windows</option>
+                            <option value="Preferred by wallkway" id="project_id">Preferred by wallkway</option>
+                        </select>
+                     </div>
+                    <div class="form-group">
+                        <label for="FullName">Weight of Luggage</label>
+                        <input type="text"  id="Number_luggage" name="luggage" class="form-control" value="{{ query.number_luggage }}">
+                    </div>
+                    <div class="form-group">
+                      <label for="AboutMe">About Me</label>
+                      <textarea style="height: 125px;" id="AboutMe" class="form-control">My name is Geyang Xu. I am a CS student in UoL. This is my final year project. I have developed this system to make it easier for passengers to choose their seats and for the administration to manage bookings.</textarea>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Save</button>
+                  </form>
+
+                </div>
+              </div>
+            </div><!--/tab-content-->
+          </div><!--/block-web--> 
+        </div><!--/col-md-8--> 
+      </div><!--/row--> 
+      
+    </div><!--/page-content end--> 
+  </div><!--/main-content end--> 
+</div><!--/page-container end-->
+{% endblock %}
