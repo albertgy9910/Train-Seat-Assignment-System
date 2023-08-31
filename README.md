@@ -1,5 +1,4 @@
 # Train-Seat-Assignment-System
-Train Seat Assignment System
 
 Designed and implemented a seat assignment system for trains with JavaScript and Python supporting seat recommendation and background management
 
