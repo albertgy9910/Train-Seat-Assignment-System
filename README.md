@@ -1,5 +1,25 @@
-# Train-Seat-Assignment-System
+# Train Seat Assignment System
 
-Designed and implemented a seat assignment system for trains with JavaScript and Python supporting seat recommendation and background management
+A web-based train seat assignment system developed with Flask, Vue.js, and JavaScript.
 
-Used Python and Flask for backend development, employed Vue and Vuex to build up frontend, used Axios to provide stronger HTTP support, visualized the booking orders and administrator settings
+## Overview
+
+This project implements a train seat assignment platform with seat recommendation, booking management, and administrative functions.
+
+## Features
+
+- Seat recommendation
+- Train ticket booking
+- Administrator dashboard
+- Booking management
+- Responsive web interface
+
+## Technologies
+
+- Python
+- Flask
+- JavaScript
+- Vue.js
+- Vuex
+- Axios
+- HTML/CSS
